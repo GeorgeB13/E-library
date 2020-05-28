@@ -1,4 +1,3 @@
-
 public class Book {
     
     String isbn;
@@ -35,50 +34,41 @@ public class Book {
     String get_isbn()
             
     {
-    
-    
-    return isbn;
+        return isbn;
     }
     
     
-   String get_title()
+    String get_title()
            
    {
-    
-    return title;
-}
+        return title;
+   }
    
-String get_author()
-        
-{
- return author;   
-}
+    String get_author()
+    {
+        return author;   
+    }
 
-Category get_category()
-        
-{
-    return category_book;
-    
+    Category get_category()
+    {
+        return category_book;
+    }
 
-}
+    String get_description()
+    {
+        return description;
+    }
 
-String get_description()
-        
-{
-    return description;
-}
+    double get_average_rating()
+    {
+        return average_rating;   
+    }
 
-double get_average_rating()
-        
-{
-    
- return average_rating;   
-}
+    String get_review_text()
+    {
+        return book_review.get_content();
+    }
 
-String get_review_text()
-{
-    return book_review.get_content();
-}
 }
 
 
