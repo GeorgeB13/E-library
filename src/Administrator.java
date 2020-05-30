@@ -38,6 +38,11 @@ public class Administrator {
     {
         Main.userlist.remove(u);
     }   
+    
+    public void delete_category(Category c)
+    {
+        Main.categorylist.remove(c);
+    } 
         
         
 }
