@@ -88,7 +88,45 @@ public class Main {
     {
         Main.booklist.remove(b);
     } 
-   
+   public void cancel_reservation(Reservation r)
+    {
+        Main.reservationlist.remove(r);
+    } 
+   public void verify_reservation(Reservation r)
+    {
+        Main.reservationlist.add(r);
+    }
+    
+    public static Book get_book(String title)
+      
+   {
+       Book temp= null;
+       
+       for(Book b : Main.booklist)
+       {
+           if(b.get_title().equals(title))
+           {
+               temp = b;
+           }
+       }
+       
+       return temp;
+   }
+    public static Category get_category(String name)
+   {
+       Category temp= null;
+       
+       for(Category c : Main.categorylist)
+       {
+           if(c.get_name().equals(name))
+           {
+               temp = c;
+           }
+       }
+       
+       return temp;
+   }
+
    
     
 }
