@@ -83,6 +83,11 @@ public class Main {
        
        return temp;
    }
+    
+    public void delete_book(Book b)
+    {
+        Main.booklist.remove(b);
+    } 
    
    
     
