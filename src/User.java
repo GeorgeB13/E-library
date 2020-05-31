@@ -5,6 +5,8 @@ public class User {
     private String password;
     private String email;
     private String photopath;
+    ArrayList<Reservation> my_reservations = new ArrayList<Reservation>();
+    ArrayList<Book> my_books = new ArrayList<Book>();
     
     public User(String username, String password, String email, String photopath)
     {
@@ -40,7 +42,29 @@ public class User {
     return photopath;   
    }
    
-   
+   public void add_my_reservations(Reservation r)
+  {
+      
+      my_reservations.add(r);
+      
+  }
+          
+ public void remove_my_reservations(Reservation r)         
+ {
+ my_reservations.remove(r);
+ }      
+ 
+ 
+ public void add_my_books(Book b)
+ {
+ my_books.add(b);
+ }        
+         
+public void remove_my_books(Book b)
+{
+my_books.remove(b);
+}
+         
    
    ArrayList<Book> search_book_title(String s)
            
@@ -189,7 +213,14 @@ ArrayList<Booking> view_user_history(String username,String isbn)
 
 
 
+ArrayList<Book> order_by_rating()
+{
 
+my_books.sort(new Comparator<Book>()
+{}
+);
+}
+//UPARXOUN MERIKES ATELEIES KAI DEN EINAI PRAKTIKO
 
 
 
