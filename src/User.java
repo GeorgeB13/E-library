@@ -42,23 +42,7 @@ public class User {
     return photopath;   
    }
    
-   public void add_my_reservations(Reservation r)
-  {
-      
-      my_reservations.add(r);
-      
-  }
-          
- public void remove_my_reservations(Reservation r)         
- {
- my_reservations.remove(r);
- }      
- 
- 
- public void add_my_books(Book b)
- {
- my_books.add(b);
- }        
+   
          
 public void remove_my_books(Book b)
 {
@@ -215,12 +199,14 @@ ArrayList<Booking> view_user_history(String username,String isbn)
 
 ArrayList<Book> order_by_rating()
 {
-
-my_books.sort(new Comparator<Book>()
-{}
-);
+    ArrayList<Book> temp = new ArrayList<Book>();
+    int flag=0;
+    for(Book b :Main.booklist)
+    {
+    booklist.sort(Comparator.comparing(Book::get_average_rating));
+    }
+    return temp;
 }
-//UPARXOUN MERIKES ATELEIES KAI DEN EINAI PRAKTIKO
 
 
 
