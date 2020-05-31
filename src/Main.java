@@ -39,6 +39,10 @@ public class Main {
    viewsentmessages.add(m);
    
         
+   Category cat1 = new Category("novel",5);
+   Category cat2 = new Category("literature",4);
+   Category cat3 = new Category("science fiction",25);     
+        
    categorylist.add(cat1);
    categorylist.add(cat2);
    categorylist.add(cat3);
