@@ -6,7 +6,8 @@ public class Main {
     
     public static ArrayList<User> userlist = new ArrayList<User>();
     public static ArrayList<Administrator> adminlist = new ArrayList<Administrator>();
-    public static ArrayList<DisplayMessageListForm> usermessagelist= new ArrayList<DisplayMessageListForm>();
+    public static ArrayList<Message> usermessagelist= new ArrayList<Message>();
+    public static ArrayList<Message> viewsentmessages = new ArrayList<Message>();
     public static ArrayList<Book> booklist = new ArrayList<Book>();
     public static ArrayList<Booking> bookinglist = new ArrayList<Booking>();
     public static ArrayList<Reservation> reservationlist = new ArrayList<Reservation>();
@@ -27,6 +28,10 @@ public class Main {
    Administrator admin1 = new Administrator("giorgos", "12345", "giorgos@gmail.com");
    
    adminlist.add(admin1);
+        
+   Message m = new Message(1,"31-05-2020","15.45","giorgos","nikos","Ypenthymish epistrofhs biblioy","Exei lhksei h prothesmia gia thn epistrofh toy biblioy");
+   
+   viewsentmessages.add(m);
    
    HomePage page1 = new HomePage();
    
@@ -116,6 +121,13 @@ public class Main {
        }
        
        return temp;
+   }
+    
+   public void send_message(Message m)
+   {
+        ArrayList<Message> temp = new ArrayList<Message>();
+            
+            temp.add(m);
    }
 
    
