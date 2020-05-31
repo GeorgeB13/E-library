@@ -76,6 +76,14 @@ String get_content()
     
  return content;   
 }
+    
+void send_message(Message m)
+{
+     ArrayList<Message> temp = new ArrayList<Message>();
+            
+     temp.add(m);
+}
+
 }
 
 
