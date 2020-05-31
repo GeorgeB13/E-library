@@ -207,6 +207,17 @@ ArrayList<Book> order_by_rating()
     }
     return temp;
 }
+ArrayList<Book> order_by_title()
+{
+    ArrayList<Book> temp= new ArrayList<Book>();
+    int flag=0;
+    for(Book b: Main.booklist)
+    {
+    bookist.sort(Comparator.comparing(Book::get_title));
+    }
+return temp;
+
+}
 
 
 
