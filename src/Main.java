@@ -23,21 +23,41 @@ public class Main {
         
    
    User user1 = new User("nikos","1234","nik@gmail.com", "path1");
-   
+   User user2 = new User("anastasia","0123","anast@gmail.com","path2");
+        
    userlist.add(user1);
-     
+   userlist.add(user2); 
+        
    Administrator admin1 = new Administrator("giorgos", "12345", "giorgos@gmail.com");
-   
+   Administrator admin2 = new Administrator("antwnis","5678","ant@gmail.com");
+        
    adminlist.add(admin1);
+    adminlist.add(admin2);
         
    Message m = new Message(1,"31-05-2020","15.45","giorgos","nikos","Ypenthymish epistrofhs biblioy","Exei lhksei h prothesmia gia thn epistrofh toy biblioy");
    
    viewsentmessages.add(m);
    
+        
+   categorylist.add(cat1);
+   categorylist.add(cat2);
+   categorylist.add(cat3);
+   
+   Review re1 = new Review(12,"nikos","123","15.04.2020","48","4");
+   reviewlist.add(re1);
+   
+   Book b1 = new Book("123","The Man","Panagiotou",cat2,"345",re1,7.5);
+   booklist.add(b1);
+   
+   Booking kra1= new Booking(23, "giorgos", "123", "5.6.2020" , "67" ,45);
+   bookinglist.add(kra1);
+        
+        
+        
+        
    HomePage page1 = new HomePage();
    
    page1.setVisible(true);
-   
    
    
         
