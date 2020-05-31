@@ -43,6 +43,14 @@ public class Administrator {
     {
         Main.categorylist.remove(c);
     } 
+    
+    
+    public void send_message(Message m,User u)
+    {
+         ArrayList<Message> temp = new ArrayList<Message>();
+            
+         temp.add(m);
+    }
         
         
 }
