@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Administrator {
     
     private String username;
     private String password;
     private String email;
-     ArrayList<Category> categ = new ArrayList<Category>();
+    ArrayList<Book> adbook = new ArrayList<Book>(); 
+    ArrayList<Category> categ = new ArrayList<Category>();
     
     public Administrator(String username, String password, String email)
             
@@ -12,7 +17,7 @@ public class Administrator {
     this.password = password;
     this.email = email;
     }
-    
+    public  Administrator(){}
     
     public String get_username()
             
@@ -199,6 +204,61 @@ ArrayList<Book> Filter_by_booktitle(String s)
            
            }
        }); 
-    
+    User search_User(String s){
+
+    User temp = new User();
+    for(User b: Main.userlist)
+         
+     {
+         
+         if(b.get_username().equals(s))
+         {
+            temp = b;
+         }
         
+     }
+
+return temp; 
+
+}
+public void del_book(String m ){
+   
+    
+       
+     Book temp = new Book();
+       
+       
+     for(Book b: Main.booklist)
+         
+     {
+         
+         if(b.get_isbn().equals(m))
+         {
+             temp=b;
+         }
+     }
+   adbook.remove(temp);
+   Main.booklist.remove(temp); 
+
+}       
+public void del_book(String m ){
+   
+    
+       
+     Book temp = new Book();
+       
+       
+     for(Book b: Main.booklist)
+         
+     {
+         
+         if(b.get_isbn().equals(m))
+         {
+             temp=b;
+         }
+     }
+   adbook.remove(temp);
+   Main.booklist.remove(temp); 
+
+}        
 }
