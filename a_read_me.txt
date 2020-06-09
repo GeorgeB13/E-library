@@ -6,7 +6,7 @@ how to execute
       GO_TO Sourse_packages\new_package
       run_main
       
-      allredy existing contstracts for testing
+      already existing snapshots for testing
       
 		Users:
 		user1("nikos","1234","nik@gmail.com", "path1")
