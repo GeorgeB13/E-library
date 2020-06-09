@@ -1,10 +1,49 @@
-public class Search_category_name_Admin extends javax.swing.JFrame {
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author User
+ */
+public class Search_category_name_Admin extends javax.swing.JFrame {
+Administrator  myadmin = new Administrator();
+    ArrayList<Book> cbook = new ArrayList<Book>();
+String c;
     /**
      * Creates new form Search_category_name_Admin
      */
-    public Search_category_name_Admin() {
+    public Search_category_name_Admin(Administrator u,String c) {
         initComponents();
+    myadmin=u;
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+    
+    Object rowdata[] = new Object[3];
+    cbook = myadmin.search_book_by_category(c);
+    for(int i=0;i<cbook.size();i++)
+       
+    {
+       rowdata[0] = cbook.get(i).get_author();
+       rowdata[1] = cbook.get(i).get_average_rating();
+       rowdata[2] = cbook.get(i).get_description();
+      
+
+
+       
+      model.addRow(rowdata);
+        
+    }
+    
+    }
+
+    private Search_category_name_Admin() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -16,24 +55,19 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 153, 0));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("E-LIBRARY");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Logout");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -41,6 +75,7 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 150, -1));
 
         jButton2.setText("ORDER BY RATING");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -48,6 +83,7 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 170, 30));
 
         jButton3.setText("ADD CATEGORY");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +91,7 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 170, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -64,15 +101,12 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "CATEGORY NAME", "TOTAL BOOKS", "RATING"
+                "AUTHOR NAME", "TOTAL BOOKS", "RATING"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(51, 51, 255));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("Search Category");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 178, 510, 110));
 
         jButton4.setText("CONFIRM");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -80,12 +114,14 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 180, 60));
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 170, 30));
 
         jButton6.setText("DELETE CATEGORY");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +129,7 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 170, -1));
 
         jButton9.setText("INSERT AUTHOR NAME");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -100,71 +137,11 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 170, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6)
-                .addGap(0, 26, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton9)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
-                        .addGap(213, 213, 213))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(89, 89, 89)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9)
-                .addGap(25, 25, 25))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nikol\\OneDrive\\Desktop\\to_logo_mas_70.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -177,7 +154,7 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setVisible(false);        // TODO add your handling code here:
-        Search_category_name_Admin page1 = new Search_category_name_Admin();
+        Search_category_name_Admin page1 = new Search_category_name_Admin(myadmin,c);
         page1.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -189,7 +166,7 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.setVisible(false);        // TODO add your handling code here:
-        STARTING_PAGE_A page1 =new STARTING_PAGE_A();
+        STARTING_PAGE_A page1 =new STARTING_PAGE_A(myadmin);
         page1.setVisible(true);
         
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -197,7 +174,7 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         this.setVisible(false);        // TODO add your handling code here:
         
-        Search_category_name_Admin form1 =new Search_category_name_Admin();
+        Search_category_name_Admin form1 =new Search_category_name_Admin(myadmin,c);
         
         form1.setVisible(true);  
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -209,7 +186,7 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
             this.setVisible(false);
             
-            Search_category_name_Admin form1 =new Search_category_name_Admin();
+            Search_category_name_Admin form1 =new Search_category_name_Admin(myadmin,c);
             
             form1.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -256,10 +233,9 @@ public class Search_category_name_Admin extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
