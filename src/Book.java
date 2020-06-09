@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 public class Book {
     
     String isbn;
@@ -29,6 +31,7 @@ public class Book {
      this.average_rating = average_rating;
     } 
 
+    public Book() {}
     
     
     String get_isbn()
