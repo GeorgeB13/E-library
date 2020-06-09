@@ -141,5 +141,64 @@ public void verify_reservetion(Reservation m,User u){
     
 
 }   
+    
+public void reset(Category m ){
+
+      adbook = Main.booklist;
+} 
+    
+    
+ArrayList<Book>Sort_by_rating(){
+ 
+       Collections.sort(adbook , new Comparator<Book>() {
+           @Override
+           public int compare(Book t, Book t1) {
+           return t.get_average_rating().compareTo(t1.get_average_rating());
+           
+           }
+       });
+    return adbook;
+
+}    
+    
+ public void cancel_reservations(Reservation m){
+     // bookings
+    Main.reservationlist.remove(m); 
+    
+}      
+    
+    
+ArrayList<Book> Filter_by_booktitle(String s)
+           
+   {
+      Book booko = new Book();
+     
+       
+       ArrayList<Book> tempBook = new ArrayList<Book>();
+     for(Reservation b: Main.reservationlist)
+         
+     {
+       
+         if(b.getbook().get_title().equals(s))
+         {
+            booko = b.getbook();
+         }
+         tempBook.add(booko);
+     }
+             
+          return tempBook; 
+   }
+    
+    
+   public void Sort_reservetions_by_date(){
+ 
+       Collections.sort( Main.reservationlist ,new Comparator<Reservation>() {
+           @Override
+           public int compare(Reservation t, Reservation t1) {
+           return t.get_date().compareTo(t1.get_date());
+           
+           }
+       }); 
+    
         
 }
