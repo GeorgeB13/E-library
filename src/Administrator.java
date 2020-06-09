@@ -44,10 +44,6 @@ public class Administrator {
         Main.userlist.remove(u);
     }   
     
-    public void delete_category(Category c)
-    {
-        Main.categorylist.remove(c);
-    } 
     
     
     public void send_message(Message m,User u)
@@ -99,7 +95,7 @@ public void del_book(Book m ){
    Main.booklist.remove(m); 
 
 }
-public void searh_book(String m ){
+public void search_book(String m ){
    Main.booklist.remove(m); 
 
 }
@@ -241,24 +237,5 @@ public void del_book(String m ){
    Main.booklist.remove(temp); 
 
 }       
-public void del_book(String m ){
-   
-    
-       
-     Book temp = new Book();
-       
-       
-     for(Book b: Main.booklist)
-         
-     {
-         
-         if(b.get_isbn().equals(m))
-         {
-             temp=b;
-         }
-     }
-   adbook.remove(temp);
-   Main.booklist.remove(temp); 
-
-}        
+      
 }
